@@ -1,0 +1,53 @@
+{% extends "bases.html" %}
+{%load static%}
+{%block style%}
+<style>
+    nav{
+        top:0px;display: flex;justify-content: right;margin-top:0px;color: blue;
+
+    }
+    body{
+        background-image:linear-gradient(to right , rgba(243, 241, 107, 0.788), rgba(235, 234, 247, 0.637));;
+        color:rgb(2, 1, 1);
+        font-family: Source Sans Pro;
+
+    }
+    a{
+        color: blue;
+    }
+    #content{
+        /* background-image: linear-gradient(to right, rgb(208, 206, 231) , rgb(238, 237, 230)); */
+    height:730px;
+    color: rgb(3, 0, 8);
+}
+</style>
+{%endblock%}
+{% block content%}
+<h2>Lighting Accessories</h2>
+
+<div class="suppliers">
+<button class="sup_btn"> Yellow bulbs</button>
+<button class="sup_btn"> Fluorescent </button>
+<button class="sup_btn"> Tubes </button>
+<button class="sup_btn">chandaleurs </button>
+<button class="sup_btn">table lights</button>
+<button class="sup_btn">round</button>
+<button class="sup_btn">Energy savers</button>
+</div>
+<div style="float: right;">
+    <label>Search:</label>
+    <input type="text" class="searchs">
+</div>
+<div>
+    <label>Sort by</label>
+    <input type="text" class="sortd">
+</div>
+<div class="lightt">
+    <img src="{% static '/images/light.jpg'%}">
+   <p> Gumboots</p>
+   <p>Description</p>
+<p>8000ksh</p>
+<button style="">Make request</button>
+<button style="float:right;">Call us</button>
+</div>
+{%endblock%}

@@ -1,0 +1,91 @@
+{% extends "base.html"%}
+{% block content%}
+<script>
+    function edit(){
+        document.getElementById("edit").style.display="block";
+    }
+    function ed(){
+        document.getElementById("edit").style.display="none";
+    }
+    function add(){
+        alert("Stock added successfully")
+    }
+</script>
+<div id="or">
+<p class="desc">Stock details</p>
+{% if save == True %} 
+    <p style="background-color: rgba(50, 173, 81, 0.37);">Stock added successfully</p>
+{%endif%}
+<div class="cont">
+    <p class="mid"><button onclick="der()">Add new stock</button></p><br>
+
+<div class="tab">
+
+    <div class="tabs">
+        <p class="tab_text">Total Stocks</p>
+    </div>
+    <div class="tabs">
+        <p class="tab_text">Amount invested</p>
+    </div>
+</div>
+<div class="stock_details"><br>
+    <label>Show </label>
+    <input type="number" style="width: 40px;height: px;border: none;" value="20">    <label>entries</label>
+
+    <input type="text" placeholder="search" class="search" style="float: right;">
+    <label style="float: right;" class="x">Search:&nbsp; </label>
+    {{id}}
+    <table>
+        <tr><th>ID</th>
+        <th>Stock</th>
+        <th>quantity</th>
+        <th>Unit price</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        </tr>
+        {% for i in stock%}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.quantity}}</td>
+        <td>{{i.selling}}</td>
+        <td><a href="/edit_stock/{{i.id}}">Update</a></td>
+        <td><a href="" style="padding: 4px;border: 1px solid greenyellow;color: black;background-color: rgba(184, 212, 212, 0.705);">Delete</a></td>
+    </tr>{%endfor%}
+    
+    </table>
+</div></div></div>
+<div id="der"><div class="ders">
+    <button class="x" onclick="x()">X</button>
+<form method="post">
+    {%csrf_token%}
+  <div class="in">
+    <h3>Add Stock</h3><br>
+
+      <label>Stock name</label><br>
+      <input type="text" name="name" class="ins" required id="id_name">
+  </div>
+  <div class="in">
+      <label>Quantity</label><br>
+      <input type="number" name="quantity" class="ins" required id="id_quantity">
+  </div>
+  <div class="in">
+    <label>Buying unit price</label><br>
+    <input type="number" name="buying" class="ins" required id="id_buying">
+</div>
+  <div class="in">
+      <label>Selling unit price</label><br>
+      <input type="number" name="selling" class="ins" required id="id_selling">
+  </div>
+  <div class="in">
+      <label>Date</label><br>
+      <input type="date" name="date" class="ins" required id="id_date">
+  </div><pre></pre><br><pre></pre>
+  <div class="btns" style="text-align: center;">
+  <button class="xc" type="submit" style="background-color: rgba(0, 0, 255, 0.418);">Add stock</button>
+  <button class="xc" onclick="x()" style="background-color: rgba(255, 0, 0, 0.514);">Cancel</button>
+</div>
+</form>
+</div></div>
+
+{%endblock%}

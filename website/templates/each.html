@@ -1,0 +1,38 @@
+{%extends "bases.html"%}
+{%load static%}
+{%block style%}
+<style>
+    body{
+        background-image: linear-gradient(to right, #ffffff,
+#ff9068);
+
+    }
+    nav{
+        top:0px;display: flex;justify-content: right;margin-top:0px;
+    }
+    nav a:hover{
+        color: brown;
+    }
+</style>{%endblock%}
+{% block content%}
+{% if ext == "garmets" or ext == "lights"%}
+
+{%else%}
+<h3>Transport</h3>
+<div id="cats">
+    <table style="width:80%;text-align:left">
+        <tr>
+            <th>Driver</th>
+            <th>Type</th>
+            <th>Number</th>
+        </tr>
+        <tr>
+            <td>Elemuel kim</td>
+            <td>Bike</td>
+            <td>Locked</td>
+        </tr>
+    </table>
+</div>
+{%endif%}
+{%endblock%}
+</div>

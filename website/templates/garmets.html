@@ -1,0 +1,60 @@
+{% extends "bases.html" %}
+{%load static%}
+{%block style%}
+<style>
+    nav{
+        top:0px;display: flex;justify-content: right;margin-top:0px;color: blue;
+
+    }
+    body{
+        background-image:url('/static/images/safe.jpg');
+        color:white;
+    }
+    a{
+        color: blue;
+    }
+    #content{
+        /* background-image: linear-gradient(to right, rgb(255, 255, 255) , rgb(247, 216, 80)); */
+        background-color: rgb(215, 224, 226);
+    height:730px;
+    color: rgb(3, 0, 8);
+}
+</style>
+{%endblock%}
+{% block content%}
+<div id="content">
+<div class="safety">
+    <p>Safety first</p>
+</div>
+
+
+<div class="suppliers">
+    <h3>All in here:- </h3>
+<button class="sup_btn"> Yellow bulbs</button>
+<button class="sup_btn"> Fluorescent </button>
+<button class="sup_btn"> Tubes </button>
+<button class="sup_btn">chandaleurs </button>
+<button class="sup_btn">table lights</button>
+<button class="sup_btn">round</button>
+<button class="sup_btn">Energy savers</button>
+</div>
+<div style="float: right;">
+    <label>Search:</label>
+    <input type="text" class="searchs">
+</div>
+<div>
+    <label>Sort by</label>
+    <input type="text" class="sortd">
+</div>
+
+    <div style="height:100%;">
+    <div class="eax">
+        <div class="image" style="margin:10px ;margin-bottom: 0%;">
+        <img src="{% static 'images/capture.png'%}" style="width: 100%;height: 100px;">
+    </div>
+        <p>Gumboots 80000</p>
+        <a>Call Us</a>
+        <a style="float:right;">Request Call</a>
+    </div>
+</div>
+{%endblock%}

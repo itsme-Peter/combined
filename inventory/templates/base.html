@@ -1,0 +1,51 @@
+{%load static%}
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="{% static 'css.css'%}">
+        <script>
+            function der(){
+                document.getElementById("der").style.display = "block";
+            }
+            function x(){
+                document.getElementById("der").style.display = "none";
+            }
+            // function s(){
+            //     document.getElementById("s").style.width = "40%";
+            //     document.getElementById("s").style.display = "block";
+
+            // }
+           
+                var s = document.getElementById("s");
+                s.style.display = "none";
+                function toggle(){
+                    if (s.style.display == "none"){
+                        s.style.display = "block";
+                    }
+                    else{
+                        s.style.maxHeight = "0px"
+                    }
+                }
+            
+        </script>
+    </head>
+    <body> 
+        <p class="acc">Account</p>
+            <p class="top"> Lights Management System</p>
+        <button onclick="toggle()" class="ham">Ham</button>
+        <div class="side" id="s">
+            <p  class="sides"><a href="/admin">Admin panel</a></p>
+            <p class="sides"><a href="/home" >Dashboard</a></p>
+            <p class="sides"><a a href="/stocks" >Stocks</a></p>
+            <p class="sides"><a href="/order" >Order</a></p>
+            <p class="sides"><a href="/users" >Users</a></p>
+            <p class="sides"><a >Report</a>
+        </div>
+            <div class="content">
+            {% block content%}
+
+            {%endblock%}
+            </div>  
+    </body>
+</html>

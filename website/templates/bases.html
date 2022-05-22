@@ -1,0 +1,40 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="{% static 'style.css'%}">
+        {%block style%}
+        <style>
+        
+        </style>
+        {%endblock%}
+    </head>
+    <body>
+    <nav style="">
+        <div class="nav_item">
+             <a href="/web/home">Home</a>
+        </div>
+
+            <div class="nav_item">
+                <div class="dropdown">
+                    Products & services
+                    <div class="dropdown-content">
+                      <a href="/web/garmets">Garmets</a>
+                      <a href="/web/lights">Lights</a>
+                      <a href="/web/products/transport">Transport</a>
+                    </div>
+                  </div>
+            </div>
+            <div class="nav_item">
+                <a href="/web/about">About</a>
+            </div>
+            <div class="nav_item">
+                 Account
+            </div>
+        </nav><div class="content">
+        {% block content%}{%endblock%}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+{%extends "base.html"%}
+{%block content%}
+<div id="edit">
+    <div class="ders">
+        <a class="x" href="/stocks">X</a>
+        <form method="post">
+            {%csrf_token%}
+
+        <div class="in">
+        <h3>Edit stock</h3>
+        <p>Stock ID:&nbsp;{{lst.0.0}}</p>
+    </div>
+    <div class="in">
+        <label>Stock name:</label>&nbsp;&nbsp;
+        <input type="text" name="name" class="ins" value="{{lst.0.1}}" style="width: 50%;">
+    </div>
+    <div class="in">
+        <p>Quantity:&nbsp;{{lst.0.2}} &nbsp;&nbsp;&nbsp; <label>Add quantity:</label>&nbsp;&nbsp;<input type="number" name="quantity" class="ins" style="width:40%"> </p>
+    </div>
+    <div class="in">
+        <p>Unit price:&nbsp;{{lst.0.3}}</p>
+    </div>
+    <div class="in">
+        <p>Date created:&nbsp;{{lst.0.4}}</p>
+    </div>
+    <div class="in">
+        <p>Units sold:200</p>
+    </div>
+    <div class="in">
+        <button class="xc" style="margin-left: 60px;background-color: rgba(16, 16, 175, 0.199);">Make changes</button>
+        <button class="xc">Delete</button>
+    </form>
+    </div><br>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,22 @@
+{%load static%}
+<head>
+    <link rel="stylesheet" href="{% static 'css.css'%}">
+
+</head>
+<body style="background-color: rgba(240, 248, 255, 0.37);">
+<div class="sign" style="margin-left:35%;margin-top:70px;max-width: 500px;background-color: white;">
+    <h3 style="text-align: center;">Sign in</h3>
+    <form method="post">
+        {%csrf_token%}
+        <div class="each" >
+            <label>Username:</label><br>
+            <input type="text" class="sins" required id="id_username" name="username">
+        </div>
+        <div class="each">
+            <label>Password:</label><br>
+            <input type="password" class="sins"  required id="id_password" name="password">
+        </div><br>
+        <button type="submit" style="margin-left:230px;background-color: azure;">sign</button>
+    </form><br>
+</div>
+</body>

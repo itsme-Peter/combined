@@ -1,0 +1,92 @@
+{% extends "base.html"%}
+{% block content%}
+
+<div id="or">
+<p class="desc"> Orders detaills</p>
+<div class="cont">
+    <p class="mid"><button onclick="der()" >Create new order</button></p><br>
+
+<div class="tab">
+<div class="tabs">
+    <p class="tab_text">Total orders</p>
+    <p class="tab_text">20</p>
+</div>
+<div class="tabs">
+    <p class="tab_text">Total sales</p>
+</div>
+<div class="tabs">
+    <p class="tab_text">Total unit sales</p>
+</div>
+</div>
+<div class="orders"><br>
+    <label>Show </label>
+    <input type="number" style="width: 40px;" value="20">    <label>entries</label>
+
+    <input type="text" placeholder="search" class="search" style="float: right;">
+    <label style="float: right;">Search:&nbsp; </label>
+
+<div class="table">
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Date & time</th>
+        <th>Buyer</th>
+        <th>Seller</th>
+        <th>Products</th>
+        <th>quantity</th>
+        <th>Total paid</th>
+        <th>View order</th>
+    </tr>
+    {%for i in orders%}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.date}}</td>
+            <td>{{i.buyer}}</td>
+            <td>{{i.seller}}</td>
+            <td>{{i.products}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.total}}</td>
+            <td>View order</td>
+        </tr>
+    {%endfor%}
+</table>
+</div>
+</div>
+</div></div>
+<div id="der"><div class="ders">
+    <button class="x" onclick="x()">X</button>
+<div class="in">
+    <small class="x">Transaction ID:30</small>
+    <h3>Add order</h3><br>
+<label>Client name</label><br>
+<input type="text" name="name" class="ins"><pre></pre>
+</div>
+<div class="in">
+<label>Transaction ID</label><br>
+<input type="number" value="20" name="id" class="ins"><br><pre></pre>
+</div>
+<div class="in">
+<label>Select product</label><br>
+<input multiple type="text" name="product" class="ins">
+</div>
+<div class="in">
+<label>Payment method</label><br>
+<input type="drop" name="method" class="ins">
+</div>
+<div class="in">
+    <label>Total</label><br>
+    <input type="number" value="19000" class="ins">
+</div>
+<div class="in">
+    <label>Paid by cash</label>
+    <input type="checkbox" >&nbsp;&nbsp;&nbsp;&nbsp;
+    <label>paid by m-pesa</label>
+    <input type="checkbox">
+</div><pre></pre>
+<div class="" style="text-align: center;">
+<button type="submit" class="xc">Save</button>
+<button class="xc">Print receipt</button>
+<button class="xc">Cancel</button>
+</div><br></div>
+</div>
+{%endblock%}

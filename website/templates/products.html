@@ -1,0 +1,58 @@
+{% extends "bases.html"%}
+{%load static%}
+{% block content%}
+<script>
+    function t(){
+        document.getElementById("cats").style.display = "block";
+    }
+    function w(){
+        document.getElementById("lights").style.display = "block";
+    }
+</script>
+<br>
+<label>Sort by:</label>
+<input type="text" class="sort">
+
+<div class="in">
+<label class="seach">Search</label>
+<input type="text" class="search_in">
+</div> 
+<h3>Transport</h3>
+<div id="cats">
+    <table style="width:80%;text-align:left">
+        <tr>
+            <th>Driver</th>
+            <th>Type</th>
+            <th>Number</th>
+        </tr>
+        <tr>
+            <td>Elemuel kim</td>
+            <td>Bike</td>
+            <td>0722261246</td>
+        </tr>
+    </table>
+</div>
+<h3>Garmets</h3>
+<div class="cat" style="display: none;">
+    <div class="product">
+        <div style="background-color:white">
+        <div class="mage"><br>
+            <img src="{% static 'images/capture.png'%}" style="width: 100%;height: 100px;">
+        </div>
+        <b><p class="product_text">Protective gumboots</p></b>
+        <p class="product_text">8000ksh</p>
+    </div>
+</div>
+</div>
+<a href="/web/products/garmets">xxxx</a>
+<h3>Lights:&nbsp;<button onclick="w()">+</button></h3>
+<div id="lights">
+    <div class="product">
+        <div style="background-color: white;">
+            <img src="{% static 'images/capture.png'%}" style="width: 100%;height: 100px;">
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

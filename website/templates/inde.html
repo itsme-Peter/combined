@@ -1,0 +1,58 @@
+{% extends "bases.html"%}
+{%load static%}
+{%block style%}<style>
+body{
+    background-image: linear-gradient(to right, rgb(206, 27, 27) , rgb(117, 221, 85));
+}
+</style>
+
+{%endblock%}
+{%block content%}
+<div >
+<div class="img" style="position: absolute;
+left: 0px;
+right: 0px;
+width: 100%;margin-top: 0%;">
+    <div class="mySlides fade">
+    <img src="{%static 'images/light.jpg'%}" style="height: 600px;width: 100%;">
+    We have the best lights
+    <div class="text" style="top:50px;position: absolute;font-size: 26px;color: wheat;">We have the best lights ever</div>
+</div>
+    <div class="mySlides fade">
+        <img src="{%static 'images/safe.jpg'%}" style="height: 600px;width: 100%;">
+    </div>
+</div>
+</div>
+
+<div style="text-align: center;justify-content: space-around;margin-top: 610px;position: absolute;">
+<div class="last_i">
+    <p>free shipping within Nairobi</p>
+</div>
+<div class="last_i">
+    <p>Hot deals!!</p>
+</div>
+<div class="last_i">
+    <p>Place an order</p>
+</div>
+<div class="last_i">
+    <p>Need some help?</p>
+</div>
+<script>
+    let slideIndex = 0;
+ showSlides();
+ 
+ function showSlides() {
+   let i;
+   let slides = document.getElementsByClassName("mySlides"); 
+   for (i = 0; i < slides.length; i++) {
+     slides[i].style.display = "none";
+   }
+   slideIndex++;
+   if (slideIndex > slides.length) {slideIndex = 1}
+   if (slideIndex < 1){slideIndex = slides.length}
+   slides[slideIndex-1].style.display = "block";
+   setTimeout(showSlides, 10000); // Change image every 2 seconds
+ }
+ 
+ </script>
+{%endblock%}
